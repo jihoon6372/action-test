@@ -41,6 +41,6 @@ jobs:
         run: |
           git add .
           git config --global user.email "jihoon6372@github.com"
-          git config --global user.name "github-actions"
+          git config --global user.name "이지훈"
           git commit -am "Inject Date"
           git push
