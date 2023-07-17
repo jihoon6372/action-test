@@ -25,17 +25,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # - name: Set up Node 16
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 16
-      # - run: |
-      #     node generate.js
-
-      - name: Overwrite file
-        uses: "DamianReeves/write-file-action@master"
+      - name: Set up Node 16
+        uses: actions/setup-node@v3
         with:
-          path: test.js
-          write-mode: overwrite
-          contents: |
-            console.log('some contents')
+          node-version: 16
+      - run: |
+          node generate.js
+
+      - name: Commit & Push
+        run: |
+          git add .
+          git push
