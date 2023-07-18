@@ -32,4 +32,7 @@ jobs:
       run: echo "Hello ${{ inputs.name }}"
       
     - name: token
-      run: sh downloadSampleJson.sh "${{ secrets.TEST_TOKEN }}"
+      uses: appleboy/ssh-action@master
+      with:
+        script: |
+          sh downloadSampleJson.sh ${{ secrets.TEST_TOKEN }}
