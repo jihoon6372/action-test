@@ -34,4 +34,4 @@ jobs:
     - name: token
       shell: bash
       run: |
-        sh downloadSampleJson.sh ${{ secrets.TEST_TOKEN }}
+        sh ../downloadSampleJson.sh ${{ secrets.TEST_TOKEN }}
