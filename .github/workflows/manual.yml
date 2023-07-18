@@ -29,4 +29,4 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: echo "Hello ${{ inputs.name }} ${{ secret.TEST_TOKEN }}"
+      run: echo "Hello ${{ inputs.name }}"
