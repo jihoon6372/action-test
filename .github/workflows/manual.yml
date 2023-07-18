@@ -27,6 +27,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - uses: actions/checkout@v3
+          
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ inputs.name }}"
@@ -34,4 +36,4 @@ jobs:
     - name: token
       shell: bash
       run: |
-        sh ../downloadSampleJson.sh ${{ secrets.TEST_TOKEN }}
+        sh downloadSampleJson.sh ${{ secrets.TEST_TOKEN }}
