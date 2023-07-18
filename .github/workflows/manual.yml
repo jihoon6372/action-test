@@ -32,4 +32,4 @@ jobs:
       run: echo "Hello ${{ inputs.name }}"
       
     - name: token
-      run: curl --location 'https://api.figma.com/v1/files/hMdMTU7XgqIjoiHCcyU7u6/' --header 'x-figma-token: ${{ secrets.TEST_TOKEN }}'
+      run: sh downloadSampleJson.sh "${{ secrets.TEST_TOKEN }}"
