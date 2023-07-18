@@ -37,4 +37,4 @@ jobs:
       shell: bash
       run: |
         sh downloadSampleJson.sh ${{ secrets.TEST_TOKEN }}
-        ls -al
+        cat button.json
