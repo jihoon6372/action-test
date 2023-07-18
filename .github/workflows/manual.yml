@@ -34,7 +34,13 @@ jobs:
       run: echo "Hello ${{ inputs.name }}"
       
     - name: token
-      shell: bash
+      env:
+        TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
       run: |
-        sh downloadSampleJson.sh ${{ secrets.TEST_TOKEN }}
-        cat button.json
+        curl -o foobar.json "https://api.figma.com/v1/files/hMdMTU7XgqIjoiHCcyU7u6/nodes?ids=50:314" \
+        --header "x-figma-token: $TEST_TOKEN"
+      
+#       shell: bash
+#       run: |
+#         sh downloadSampleJson.sh ${{ secrets.TEST_TOKEN }}
+#         cat button.json
