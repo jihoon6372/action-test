@@ -28,6 +28,7 @@ jobs:
 
       - name: Build page
         run: |
+          git switch test-branch
           git pull
           yarn version --new-version ${{ github.event.client_payload.version }}
 
