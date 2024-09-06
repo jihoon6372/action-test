@@ -27,7 +27,9 @@ jobs:
           git config user.name "Tester"
 
       - name: Build page
-        run: yarn version --new-version 1.0.0-test.1
+        run: |
+          git pull
+          yarn version --new-version 1.0.0-test.1
 
       - name: Commit & Push
         run: |
