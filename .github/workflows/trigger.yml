@@ -21,6 +21,10 @@ jobs:
         with:
           github-token: ${{ secrets.MY_GITHUB_TOKEN }}
 
+      - name: Set User
+        run: |
+          git config user.email "jihoon6372@hanmail.net"
+          git config user.name "Tester"
 
       - name: Build page
         run: yarn version --new-version 1.0.0-test.1
